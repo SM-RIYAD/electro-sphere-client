@@ -1,37 +1,33 @@
 import { Link, NavLink } from "react-router-dom";
-// import { AuthContext } from "../../../providers/AuthProvider";
+
 import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Header = () => {
-//   const { user, logOut } = useContext(AuthContext);
-// console.log("photo url",user?.photoURL); 
-//   const handleLogout =()=>{
-
-//     logOut()
-//     .then(result => {
-//       console.log(result.user)})
-//     .catch(err=>console.log(err));
-
-//   }
-const user={};
+  const { user, logOut, theme, setTheme } = useContext(AuthContext);
+  console.log("photo url", user?.photoURL);
+  const handleLogout = () => {
+    logOut()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const navLinks = (
     <>
-      <li className={`${user ?'pt-10':'pt-5' }  `} >
+      <li className={`${user ? "pt-10" : "pt-5"} `}>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className={`${user ?'pt-10':'pt-5' } `}>
-        <NavLink to="/blog">Add Product</NavLink>
+      <li className={`${user ? "pt-10" : "pt-5"} `}>
+        <NavLink to="/addproduct">Add Product</NavLink>
       </li>
-      <li className={`${user ?'pt-10':'pt-5' } `}>
-        <NavLink to="/opinion">My Cart</NavLink>
+      <li className={`${user ? "pt-10" : "pt-5"} `}>
+        <NavLink to="/mycart">My Cart</NavLink>
       </li>
       <li>
-
-          {
-
-            user&& <div className=" lg:ms-10  flex items-center flex-col mt-2 gap-2  ">
-           
+        {user && (
+          <div className=" lg:ms-10  flex items-center flex-col mt-2 gap-2  ">
             <div className="rounded-full ">
               <div className="w-12  rounded-full ">
                 <img className="rounded-full" src={user?.photoURL} />
@@ -39,13 +35,12 @@ const user={};
             </div>
             <p className="font-bold">{user.displayName}</p>
           </div>
-          }
-
+        )}
       </li>
     </>
   );
   return (
-    <div className=" bg-gray-400  ">
+    <div className="   ">
       <div className="navbar  lg:max-w-6xl mx-auto   ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -69,24 +64,57 @@ const user={};
               tabIndex={0}
               className="menu z-40 menu-sm dropdown-content mt-3  p-2 shadow bg-red-500 rounded-box w-52"
             >
-           {navLinks}
+              {navLinks}
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-red-800 font-bold text-xl">
-          ElectroSphere
+            ElectroSphere
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-  
-          {user?.displayName? (
-         
-              <button  className="btn btn-primary bg-red-400 border-0 text-white"> Logout</button>
-           
+          {user?.displayName ? (
+            <button
+              onClick={handleLogout}
+              className="btn btn-primary bg-red-400 border-0 text-white"
+            >
+              {" "}
+              Logout
+            </button>
           ) : (
-            <Link to={"/login"}><button className="btn border-0  bg-red-400 text-white"> Log in</button> </Link> 
+            <Link to={"/login"}>
+              <button className="btn border-0  bg-red-400 text-white">
+                {" "}
+                Log in
+              </button>{" "}
+            </Link>
+          )}
+          {theme === "light" && (
+            <button
+              onClick={() => {setTheme("dark");
+              console.log("this is theme ",theme)
+            
+            }}
+              className="btn btn-primary ms-5  border-0 text-white"
+            >
+              {" "}
+              Dark
+            </button>
+          )}
+
+          {theme === "dark" && (
+            <button
+              onClick={() => {setTheme("light")
+            
+            
+            console.log("this is theme ",theme)}}
+              className="btn btn-primary ms-5 border-0 text-white"
+            >
+              {" "}
+              Light
+            </button>
           )}
         </div>
       </div>
