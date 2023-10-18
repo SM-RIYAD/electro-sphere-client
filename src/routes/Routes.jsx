@@ -9,6 +9,7 @@ import PrivateRoute from "./privateRoute";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCartPage from "../Pages/MyCartPage/MyCartPage";
 import UpdateProductPage from "../Pages/UpdateProduct/UpdateProductPage";
+import ProductDetail from "../Pages/ProductDetails/ProductDetail";
 
 
 
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
                 
                 element: <BrandPage/>, 
                 
-                loader: () => fetch('/public/sliderpic.json')
+                loader: () => fetch('/sliderpic.json')
             
             }, 
             {
@@ -43,6 +44,12 @@ const router = createBrowserRouter([
             {
                 path: '/updateproduct/:id',
                 element: <UpdateProductPage/>, 
+            
+            }, 
+
+            {
+                path: '/productdetails/:id',
+                element: <ProductDetail/>, 
             
             }, 
             {
@@ -59,6 +66,7 @@ const router = createBrowserRouter([
             {
                 path: '/myCart', 
                 element: <PrivateRoute><MyCartPage/></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/cart')
                 
             },
           

@@ -24,7 +24,11 @@ const BrandProductCard = ({ product }) => {
 
           <p>{rating} </p>
           <div className="card-actions justify-center">
+            <Link to={`/productdetails/${_id}` }>
+
             <button className="btn btn-primary">Details</button>
+            </Link>
+   
             
              <Link to ={ `/updateproduct/${_id}`}>
              <button className="btn btn-primary">Update</button>
