@@ -1,13 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import Header from "../../Shared/Header";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import BrandProductCard from "./BrandProductCard";
 import { AuthContext } from "../../providers/AuthProvider";
+import Brandslider from "./Brandslider";
 
 const BrandPage = () => {
   const [brandProducts, setBrandProducts] = useState([]);
+  const all_pics = useLoaderData();
   const [ploading, setploading] = useState(false);
   const { brandName } = useParams();
+
+
+
+
+
   const  { theme } =useContext(AuthContext)
   useEffect(() => {
     setploading(true);
@@ -18,16 +25,24 @@ const BrandPage = () => {
       
       });
   }, []);
+
+
   // useEffect(() => {
   //   fetch("/public/brandproduct.json")
   //     .then((result) => result.json())
   //     .then((data) => setBrandProducts(data));
   // }, []);
+  const brandpics=all_pics.filter(p=>p.brandName===brandName)
+  // console.log(" brand pic ", brandpics );
+  console.log("brand pics ", brandpics[0]. picUrls);
+  
+    
+  // console.log("slider pics from state: ", sliderpics);
 
-  console.log("brand products ", brandProducts);
   return (
     <div className=" min-h-screen" data-theme={`${theme}`}>
       <Header></Header>
+      <Brandslider pictures={brandpics[0]?. picUrls} />
       <div className=" lg:max-w-6xl mx-auto">
          
          {

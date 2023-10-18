@@ -27,7 +27,11 @@ const router = createBrowserRouter([
             }, 
             {
                 path: '/brand/:brandName',
+
+                
                 element: <BrandPage/>, 
+                
+                loader: () => fetch('/public/sliderpic.json')
             
             }, 
             {

@@ -1,0 +1,50 @@
+[
+    {
+        "brandName": "Samsung",
+        "picUrls": [
+            "https://assets.turbologo.com/blog/en/2019/07/19085112/samsung-logo-cover-958x575.jpg",
+            "https://image-us.samsung.com/SamsungUS/home/samsung-logo-191-1.jpg",
+            "https://i.pinimg.com/1200x/3c/d6/32/3cd632602352c6856371e85d81acc460.jpg"
+        ]
+    },
+    {
+        "brandName": "Apple",
+        "picUrls": [
+            "https://timelinecovers.pro/facebook-cover/download/apple-shines-facebook-cover.jpg",
+            "https://timelinecovers.pro/facebook-cover/download/apple-facebook-cover.jpg",
+            "https://similarworlds.com/facebookcovers/facebook-cover-photos-timeline/fb/brands/Apple-Mac-Air-Facebook-Cover.jpg"
+        ]
+    },
+    {
+        "brandName": "Intel",
+        "picUrls": [
+            "https://www.yugatech.com/wp-content/uploads/2021/08/intel-arc-logo.png",
+            "https://images.7news.com.au/publication/C-6351273/4208966925d4f9796046f65f272f2b53036ad7b7-16x9-x0y0w1280h720.jpg?imwidth=650&impolicy=sevennews_v2",
+            "https://timelinecovers.pro/facebook-cover/download/intel-processor-facebook-cover.jpg"
+        ]
+    },
+    {
+        "brandName": "Asus",
+        "picUrls": [
+            "https://timelinecovers.pro/facebook-cover/download/asus-facebook-cover.jpg",
+            "https://i.pinimg.com/736x/af/7a/ed/af7aedbe08f8a5a111f08a278bc2b351.jpg",
+            "https://cdn.statically.io/img/timelinecovers.pro/facebook-cover/download/asus-republic-of-gamers-facebook-cover.jpg"
+        ]
+    },
+    {
+        "brandName": "Google",
+        "picUrls": [
+            "https://www.shutterstock.com/image-photo/kiev-ukraine-march-08-2015-260nw-260747111.jpg",
+            "https://timelinecovers.pro/facebook-cover/download/lights-of-google-facebook-cover.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpzkw8jT3SywovOz6t_4GlggsvEHEWgtFagdtityLeQtLosgifAmUDBwuGvXgb4_rRhIs&usqp=CAU"
+        ]
+    },
+    {
+        "brandName": "Sony",
+        "picUrls": [
+            "https://assets.turbologo.com/blog/en/2020/02/19084649/Sony-Ericsson-logo-cover-958x575.png",
+            "https://c4.wallpaperflare.com/wallpaper/224/624/45/sony-firm-bw-logo-wallpaper-preview.jpg",
+            "https://midiaresearch.com/storage/uploads/blog/featured/1173/cover_image-1594622773.jpeg"
+        ]
+    }
+]
