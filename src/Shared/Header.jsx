@@ -25,7 +25,52 @@ const Header = () => {
       <li className={`${user ? "pt-10" : "pt-5"} `}>
         <NavLink to="/mycart">My Cart</NavLink>
       </li>
-      <li>
+    
+
+      <li className={`${user ? "pt-7" : "pt-5"} `}>  {theme === "light" && (
+            <button
+              onClick={() => {setTheme("dark");
+              console.log("this is theme ",theme)
+            
+            }}
+              className="btn btn-primary p-4   border-0 text-white"
+            >
+              {" "}
+              Dark
+            </button>
+          )}
+
+          {theme === "dark" && (
+            <button
+              onClick={() => {setTheme("light")
+            
+            
+            console.log("this is theme ",theme)}}
+              className="btn btn-primary ms-5 border-0 text-white"
+            >
+              {" "}
+              Light
+            </button>
+          )}</li>
+          <li className={`${user ? "pt-7" : "pt-2"} `}>
+          {user?.displayName ? (
+            <button
+              onClick={handleLogout}
+              className="btn btn-primary bg-red-400 border-0 pt-4 text-white"
+            >
+              {" "}
+              Logout
+            </button>
+          ) : (
+            <Link to={"/login"}>
+              <button className="btn btn-primary bg-red-400 border-0 pt-4 text-white pb-5">
+                {" "}
+                Log in
+              </button>{" "}
+            </Link>
+          )}
+          </li>
+          <li>
         {user && (
           <div className=" lg:ms-10  flex items-center flex-col mt-2 gap-2  ">
             <div className="rounded-full ">
@@ -72,10 +117,11 @@ const Header = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          {/* <ul className="menu menu-horizontal px-1">{navLinks}</ul> */}
         </div>
-        <div className="navbar-end">
-          {user?.displayName ? (
+        <div className="navbar-end hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          {/* {user?.displayName ? (
             <button
               onClick={handleLogout}
               className="btn btn-primary bg-red-400 border-0 text-white"
@@ -90,8 +136,8 @@ const Header = () => {
                 Log in
               </button>{" "}
             </Link>
-          )}
-          {theme === "light" && (
+          )} */}
+          {/* {theme === "light" && (
             <button
               onClick={() => {setTheme("dark");
               console.log("this is theme ",theme)
@@ -115,7 +161,7 @@ const Header = () => {
               {" "}
               Light
             </button>
-          )}
+          )} */}
         </div>
       </div>
     </div>

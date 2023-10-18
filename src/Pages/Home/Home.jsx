@@ -20,7 +20,7 @@ const [brands,setBrands]=useState([]);
         <div data-theme={`${theme}`} className="">
          <Header></Header>
          <Banner/>
-<div className="grid lg:max-w-6xl mx-auto gap-5 mt-10 grid-cols-3">
+<div className="grid lg:max-w-6xl mx-auto gap-5 mt-10 lg:grid-cols-3 md:grid-cols-1 md:px-48 lg:px-0 grid-cols-1 lg:ps-0 ps-12 ">
 
 {
 brands.map((brand,idx)=><BrandCards brand={brand} key={idx}/>)

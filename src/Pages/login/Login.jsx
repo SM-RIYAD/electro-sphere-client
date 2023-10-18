@@ -16,7 +16,7 @@ const Login = () => {
     toast.success(successmsg, { position: "bottom-center" });
 //   const { signIn,googleSignIn } = useContext(AuthContext);
 
-const { signIn,googleSignIn }=useContext(AuthContext);
+const { signIn,googleSignIn,theme }=useContext(AuthContext);
  
   const handleLogin = (e) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ const { signIn,googleSignIn }=useContext(AuthContext);
 
   }
   return (
-    <div className="">
+    <div data-theme={`${theme}`}  className="">
      <Header></Header>
       <ToastContainer />
       <div className="hero min-h-screen ">
