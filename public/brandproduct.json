@@ -1,0 +1,46 @@
+[
+    {
+        "_id": "652fbaa2b626e5a7eacd660b",
+        "name": "Galaxy S21",
+        "brand": "Samsung",
+        "date": "2023-01-15",
+        "price": 799.99,
+        "rating": 4.5,
+        "description": "The latest flagship smartphone from Samsung.",
+        "type": "phone",
+        "photo": "https://images.unsplash.com/photo-1610792516286-524726503fb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R2FsYXh5JTIwUzIxfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "_id": "652fbaa2b626e5a7eacd660c",
+        "name": "Galaxy Tab S7",
+        "brand": "Samsung",
+        "date": "2023-02-20",
+        "price": 649.99,
+        "rating": 4.7,
+        "description": "Powerful tablet with a large AMOLED display.",
+        "type": "tablet",
+        "photo": "https://images.unsplash.com/photo-1620288650879-20db0eb38c05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R2FsYXh5JTIwVGFiJTIwUzd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "_id": "652fbaa2b626e5a7eacd660d",
+        "name": "Samsung Galaxy Watch 4",
+        "brand": "Samsung",
+        "date": "2023-03-25",
+        "price": 299.99,
+        "rating": 4.6,
+        "description": "Smartwatch with health and fitness tracking features.",
+        "type": "wearable",
+        "photo": "https://unsplash.com/photos/a-person-with-a-tattoo-on-their-arm-holding-an-apple-watch-hwn20c-tQrQ"
+    },
+    {
+        "_id": "652fbaa2b626e5a7eacd660e",
+        "name": "Samsung Odyssey G9",
+        "brand": "Samsung",
+        "date": "2023-04-10",
+        "price": 1499.99,
+        "rating": 4.8,
+        "description": "Ultra-wide gaming monitor with high refresh rate.",
+        "type": "monitor",
+        "photo": "https://images.unsplash.com/photo-1585792180666-f7347c490ee2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9uaXRvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    }
+]

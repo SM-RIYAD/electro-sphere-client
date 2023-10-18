@@ -47,7 +47,7 @@ const newProduct= {name,brand, date, price, rating, description,type,photo
 }
     return (
         
-        <div >
+        <div className='min-h-screen' >
             <Header></Header>
 
             <div className='lg:max-w-6xl mx-auto bg-slate-300 rounded-xl shadow-xl'>

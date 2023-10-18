@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const BrandCards = ({ brand }) => {
   const { name, img, _id } = brand;
   return (
-    <Link to={`/brand/${_id}`}>
+    <Link to={`/brand/${name}`}>
       {" "}
-      <div className="hover:scale-95  " >
+      <div className="hover:scale-95   " >
         <div className="card lg:w-96 md:w-auto w-56 bg-base-100 shadow-xl image-full border  border-stone-100">
           <figure className="h-56">
             <img

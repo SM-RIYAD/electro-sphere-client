@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             
             }, 
             {
-                path: '/brand/:id',
+                path: '/brand/:brandName',
                 element: <BrandPage/>, 
             
             }, 

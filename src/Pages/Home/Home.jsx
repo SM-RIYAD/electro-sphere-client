@@ -14,7 +14,7 @@ const [brands,setBrands]=useState([]);
     useEffect(() => {
      fetch("http://localhost:5000/brands").then((result) => result.json()).then((data) => setBrands(data));
     }, []);
-  console.log("brands",brands)
+//   console.log("brands",brands)
   
     return (
         <div data-theme={`${theme}`} className="">

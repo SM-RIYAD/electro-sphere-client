@@ -1,11 +1,55 @@
-import React from 'react';
+import { useContext, useEffect, useState } from "react";
+import Header from "../../Shared/Header";
+import { useParams } from "react-router-dom";
+import BrandProductCard from "./BrandProductCard";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const BrandPage = () => {
-    return (
-        <div>
-            This is brand page
+  const [brandProducts, setBrandProducts] = useState([]);
+  const [ploading, setploading] = useState(false);
+  const { brandName } = useParams();
+  const  { theme } =useContext(AuthContext)
+  useEffect(() => {
+    setploading(true);
+    fetch(`http://localhost:5000/brandproducts/${brandName}`)
+      .then((result) => result.json())
+      .then((data) => {setBrandProducts(data)
+        setploading(false);
+      
+      });
+  }, []);
+  // useEffect(() => {
+  //   fetch("/public/brandproduct.json")
+  //     .then((result) => result.json())
+  //     .then((data) => setBrandProducts(data));
+  // }, []);
+
+  console.log("brand products ", brandProducts);
+  return (
+    <div className=" min-h-screen" data-theme={`${theme}`}>
+      <Header></Header>
+      <div className=" lg:max-w-6xl mx-auto">
+         
+         {
+
+          ploading? <div><span className="loading loading-spinner loading-lg"></span></div> :<div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
+
+        
+          { 
+          brandProducts.length? 
+          
+          brandProducts.map((product, idx) => (
+            <BrandProductCard key={idx} product={product}></BrandProductCard>
+          )) :<div className=" mt-20 col-span-2 row-span-4 flex justify-center w-full "> <p className="text-6xl font-bold">Sorry! There are no available products for this brand. </p></div>}
         </div>
-    );
+
+
+         }
+
+        
+      </div>
+    </div>
+  );
 };
 
 export default BrandPage;
