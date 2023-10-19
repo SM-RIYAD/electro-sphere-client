@@ -30,7 +30,7 @@ const AddProduct = () => {
 
     console.log(" added product is  ", newProduct);
     ///sending product to server
-    fetch("http://localhost:5000/addproduct", {
+    fetch("https://brand-website-server.vercel.app/addproduct", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -72,7 +72,7 @@ const AddProduct = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Type</span>
+                  <span className="label-text text-black" >Type</span>
                 </label>
                 <input
                   type="type"

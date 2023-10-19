@@ -9,7 +9,7 @@ const UpdateProductPage = () => {
   const { id } = useParams();
   console.log("id: ", id);
   useEffect(() => {
-    fetch(`http://localhost:5000/specificProduct/${id}`)
+    fetch(`https://brand-website-server.vercel.app/specificProduct/${id}`)
       .then((result) => result.json())
       .then((data) => {
         setSpecificProduct(data);
@@ -44,7 +44,7 @@ const UpdateProductPage = () => {
 
     console.log(" updated product is  ", updatedProduct);
     fetch(
-        `http://localhost:5000/updateproduct/${id}`,
+        `https://brand-website-server.vercel.app/updateproduct/${id}`,
         {
           method: "PUT",
           headers: {

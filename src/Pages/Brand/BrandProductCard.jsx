@@ -14,9 +14,15 @@ const BrandProductCard = ({ product }) => {
           />
         </figure>
         <div className="card-body lg:w-1/2">
-          <h2 className="card-title">{name}</h2>
-          <p className="text-xl"> {brand}</p>
-          <p>{type}</p>
+          <h2 className="card-title text-2xl">{name}</h2>
+          {/* <p className="text-xl"> {brand}</p>
+          <p>{type}</p> */}
+          <div className="flex gap-2 my-3 ">
+
+<button className="btn   px-1 text-xs btn-outline btn-warning">{brand}</button>
+<button className="btn  px-1 text-xs btn-outline btn-warning">{type}</button>
+</div>
+ 
           
           
           <p>{description}</p>

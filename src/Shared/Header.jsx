@@ -26,50 +26,50 @@ const Header = () => {
         <NavLink to="/mycart">My Cart</NavLink>
       </li>
 
-      <li className={`${user ? "pt-7" : "pt-5"} `}>
+      <li className={`${user ? "pt-10" : "pt-5"} `}>
         {" "}
         {theme === "light" && (
-          <button
+          <p
             onClick={() => {
               setTheme("dark");
               console.log("this is theme ", theme);
             }}
-            className="btn btn-primary p-4   border-0 text-white"
+            className="    border-0 "
           >
             {" "}
             Dark
-          </button>
+          </p>
         )}
         {theme === "dark" && (
-          <button
+          <p
             onClick={() => {
               setTheme("light");
 
               console.log("this is theme ", theme);
             }}
-            className="btn btn-primary p-4  border-0 text-white"
+            className="  border-0 "
           >
             {" "}
             Light
-          </button>
+          </p>
         )}
       </li>
-      <li className={`${user ? "pt-7" : "pt-2"} `}>
+      <li className={`${user ? "pt-10" : "pt-5"} `}>
         {user?.displayName ? (
-          <button
+          <p
             onClick={handleLogout}
-            className="btn btn-primary bg-red-400 border-0 pt-4 text-white"
+            className="  border-0  "
           >
             {" "}
             Logout
-          </button>
+          </p>
         ) : (
-          <Link to={"/login"}>
-            <button className="btn btn-primary bg-red-400 border-0 pt-4 text-white pb-5">
+          <NavLink to={"/login"}>
+            <p className=" border-0 ">
               {" "}
               Log in
-            </button>{" "}
-          </Link>
+            </p>{" "}
+          </NavLink>
         )}
       </li>
       <li>

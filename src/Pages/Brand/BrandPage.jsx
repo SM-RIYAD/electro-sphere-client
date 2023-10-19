@@ -18,7 +18,7 @@ const BrandPage = () => {
   const  { theme } =useContext(AuthContext)
   useEffect(() => {
     setploading(true);
-    fetch(`http://localhost:5000/brandproducts/${brandName}`)
+    fetch(`https://brand-website-server.vercel.app/brandproducts/${brandName}`)
       .then((result) => result.json())
       .then((data) => {setBrandProducts(data)
         setploading(false);

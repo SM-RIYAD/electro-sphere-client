@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const { id } = useParams();
   console.log("id: ", id);
   useEffect(() => {
-    fetch(`http://localhost:5000/specificProduct/${id}`)
+    fetch(`https://brand-website-server.vercel.app/specificProduct/${id}`)
       .then((result) => result.json())
       .then((data) => {
         setSpecificProduct(data);
@@ -54,12 +54,17 @@ const ProductDetail = () => {
         </div>
         <div className="mb-10" data-aos-duration="3000">
           <h1 className="text-4xl font-bold mt-5"> {specificProduct?.name}</h1>
-          <p className="text-gray my-5 ">{specificProduct?.brand}</p>
-          <p className="text-gray my-5 ">
-            <i>{specificProduct?.type}</i>
-          </p>
-          <p className=" font-bold py-3">{specificProduct.price} $</p>
-          <p className="text-gray my-5 ">{specificProduct?.description}</p>
+          {/* <p className="text-gray my-5 ">{specificProduct?.brand}</p> */}
+         
+         <div className="flex gap-2 my-3 ">
+
+         <button className="btn  px-1 text-xs btn-outline btn-warning">{specificProduct?.brand}</button>
+         <button className="btn  px-1 text-xs btn-outline btn-warning">{specificProduct?.type}</button>
+         </div>
+          
+         
+          <p className=" font-bold py-2">{specificProduct.price} $</p>
+          <p className="text-gray my-3 ">{specificProduct?.description}</p>
 
           <button
             onClick={handleAddToCart}
