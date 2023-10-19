@@ -71,14 +71,14 @@ const { signIn,googleSignIn,theme }=useContext(AuthContext);
       <ToastContainer />
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:block hidden lg:text-left h-1/2 w-1/2  ">
+          <div className="text-center lg:block hidden lg:text-left h-full w-full  ">
             <img
               className="h-full object-cover"
-              src="https://i.ibb.co/dDYVyz5/vecteezy-cloud-computing-modern-flat-concept-for-web-banner-design-5879539.jpg"
+              src="https://i.ibb.co/DpXydjr/vecteezy-cloud-computing-modern-flat-concept-for-web-banner-design-5879539-removebg-preview-3.png"
               alt=""
             />
           </div>
-          <div className=" card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className=" border-2 border-white card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -114,14 +114,14 @@ const { signIn,googleSignIn,theme }=useContext(AuthContext);
                   {" "}
                   <p>
                     New to the web site?
-                    <span className="text-red-600 font-bold underline">
+                    <span className="text-blue-600 font-bold underline">
                       <Link to={"/register"}>Register </Link>
                     </span>
                   </p>
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-red-600 btn-primary border-0 text-white">
+                <button className="btn bg-blue-600 btn-primary border-0 text-white">
                   Login
                 </button>
                
@@ -131,7 +131,7 @@ const { signIn,googleSignIn,theme }=useContext(AuthContext);
                 </button> */}
             </form> 
             <div className="flex justify-center w-full">
-            <button onClick={handleGoogleSignin} className=" lg:w-[320px] w-[220px] btn mt-1 mb-5  bg-red-600 btn-primary border-0 text-white">
+            <button onClick={handleGoogleSignin} className=" lg:w-[320px] w-[220px] btn mt-1 mb-5  bg-blue-600 btn-primary border-0 text-white">
                   Log In With Google
                 </button>
 

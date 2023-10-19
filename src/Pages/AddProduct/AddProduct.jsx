@@ -51,16 +51,16 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen px-5">
       <Header></Header>
 
-      <div className="lg:max-w-6xl mx-auto bg-slate-300 rounded-xl shadow-xl">
-        <form onSubmit={handleAddProduct} className="card-body">
+      <div className="lg:max-w-6xl   mx-auto bg-slate-300 rounded-xl shadow-xl">
+        <form onSubmit={handleAddProduct} className="card-body ">
           <div className="flex lg:flex-row flex-col gap-5">
             <div className="w-full lg:w-1/2 ">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Product Name</span>
+                  <span className="label-text text-black">Product Name</span>
                 </label>
                 <input
                   type="text"
@@ -85,7 +85,7 @@ const AddProduct = () => {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo Url</span>
+                  <span className="label-text text-black">Photo Url</span>
                 </label>
                 <input
                   type="photo"
@@ -98,7 +98,7 @@ const AddProduct = () => {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Date</span>
+                  <span className="label-text text-black">Date</span>
                 </label>
                 <input
                   type="date"
@@ -112,7 +112,7 @@ const AddProduct = () => {
             <div className="lg:w-1/2 w-full">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Brand Name</span>
+                  <span className="label-text text-black">Brand Name</span>
                 </label>
                 <input
                   type="text"
@@ -125,7 +125,7 @@ const AddProduct = () => {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Short Description</span>
+                  <span className="label-text text-black">Short Description</span>
                 </label>
                 <input
                   type="text"
@@ -137,7 +137,7 @@ const AddProduct = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Price</span>
+                  <span className="label-text text-black">Price</span>
                 </label>
                 <input
                   type="number"
@@ -150,7 +150,7 @@ const AddProduct = () => {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Rating</span>
+                  <span className="label-text text-black">Rating</span>
                 </label>
                 <input
                   type="number"

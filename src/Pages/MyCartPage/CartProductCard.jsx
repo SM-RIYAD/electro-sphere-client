@@ -48,16 +48,38 @@ const CartProductCard = ({setProducts, product,cartproducts }) => {
           </figure>
           <div className="card-body lg:w-1/2">
             <h2 className="card-title">{name}</h2>
-            <p className="text-xl"> {brand}</p>
-            <p>{type}</p>
+            {/* <p className="text-xl"> {brand}</p>
+
+            <p>{type}</p> */}
+               <div className="flex gap-2 my-3 ">
+            <button className="btn   px-1 text-xs btn-outline btn-warning">
+              {brand}
+            </button>
+            <button className="btn  px-1 text-xs btn-outline btn-warning">
+              {type}
+            </button>
+          </div>
 
             <p>{description}</p>
-            <p>
+            {/* <p>
               {" "}
               <i>{price} $</i>
             </p>
 
-            <p>{rating} </p>
+            <p>{rating} </p> */}
+            
+          <p className="text-red-500 font-bold"> {price} $</p>
+
+          <p>
+            {" "}
+            <i>
+              {" "}
+              Rated <span className=" font-bold text-gray-600">
+                {rating}{" "}
+              </span>{" "}
+              out of 5{" "}
+            </i>{" "}
+          </p>
             <div className="card-actions justify-center">
               <button onClick={()=>handleDelete(_id)} className="btn  btn-error">
                 Delete

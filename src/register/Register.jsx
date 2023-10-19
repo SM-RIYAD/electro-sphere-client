@@ -66,14 +66,14 @@ const  { createUser, updateUser,logOut } =useContext(AuthContext)
       <ToastContainer />
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left h-1/2 w-1/2 lg:block hidden  ">
+          <div className="text-center lg:text-left h-full w-full lg:block hidden  ">
             <img
               className="h-full object-cover"
-              src="https://i.ibb.co/dDYVyz5/vecteezy-cloud-computing-modern-flat-concept-for-web-banner-design-5879539.jpg"
+              src="https://i.ibb.co/DpXydjr/vecteezy-cloud-computing-modern-flat-concept-for-web-banner-design-5879539-removebg-preview-3.png"
               alt=""
             />
           </div>
-          <div className=" card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="border-2 border-white  card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">

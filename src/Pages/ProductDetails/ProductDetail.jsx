@@ -65,10 +65,10 @@ const ProductDetail = () => {
          
           <p className=" font-bold py-2">{specificProduct.price} $</p>
           <p className="text-gray my-3 ">{specificProduct?.description}</p>
-
+            <p className="font-bold my-3 "> MFG: < span className="font-bold text-red-600">{specificProduct.date}</span></p>
           <button
             onClick={handleAddToCart}
-            className="btn  text-white btn-primary  "
+            className="btn btn-accent  text-white   "
           >
             Add to Cart
           </button>
