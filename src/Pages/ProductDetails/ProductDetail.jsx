@@ -8,9 +8,9 @@ const ProductDetail = () => {
   const [specificProduct, setSpecificProduct] = useState({});
   const { user, logOut, theme, setTheme } = useContext(AuthContext);
   const { id } = useParams();
-  console.log("this is cart user ", user.email);
+  // console.log("this is cart user ", user?.email);
 
-  const email=user.email;
+  const email=user?.email;
   useEffect(() => {
     fetch(`https://brand-website-server.vercel.app/specificProduct/${id}`)
       .then((result) => result.json())
