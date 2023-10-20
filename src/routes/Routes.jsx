@@ -66,7 +66,7 @@ const router = createBrowserRouter([
             {
                 path: '/myCart', 
                 element: <PrivateRoute><MyCartPage/></PrivateRoute>,
-                loader: () => fetch('https://brand-website-server.vercel.app/cart')
+                
                 
             },
           

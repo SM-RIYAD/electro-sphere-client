@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Header from "../../Shared/Header";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const AddProduct = () => {
+  const errorToast = (loginError) =>
+  toast.error(loginError, { position: "bottom-center" });
   const handleAddProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,47 +16,57 @@ const AddProduct = () => {
     const date = form.date.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const description = form.description.value;
-    const type = form.type.value;
-    const brand = form.brandName.value;
 
-    const newProduct = {
-      name,
-      brand,
-      date,
-      price,
-      rating,
-      description,
-      type,
-      photo,
-    };
+    if(rating>5){
+console.log("sd");
+errorToast("Rating should be less than 5");
+return;
+    }else{
 
-    console.log(" added product is  ", newProduct);
-    ///sending product to server
-    fetch("https://brand-website-server.vercel.app/addproduct", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Product Added Successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
-        }
-      });
+      const description = form.description.value;
+      const type = form.type.value;
+      const brand = form.brandName.value;
+  
+      const newProduct = {
+        name,
+        brand,
+        date,
+        price,
+        rating,
+        description,
+        type,
+        photo,
+      };
+  
+      console.log(" added product is  ", newProduct);
+      ///sending product to server
+      fetch("https://brand-website-server.vercel.app/addproduct", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            Swal.fire({
+              title: "Success!",
+              text: "Product Added Successfully",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          }
+        });
+
+    }
+  
   };
   return (
     <div className="min-h-screen px-5">
       <Header></Header>
-
+      <ToastContainer />
       <div className="lg:max-w-6xl   mx-auto bg-slate-300 rounded-xl shadow-xl">
         <form onSubmit={handleAddProduct} className="card-body ">
           <div className="flex lg:flex-row flex-col gap-5">

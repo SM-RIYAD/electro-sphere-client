@@ -129,14 +129,14 @@ const  { createUser, updateUser,logOut } =useContext(AuthContext)
                   {" "}
                   <p>
                     Have an account?
-                    <span className="text-red-600 font-bold underline">
+                    <span className="text-blue-600 font-bold underline">
                       <Link to={"/login"}>Log in </Link>
                     </span>
                   </p>
                 </label>
               </div>
               <div className="form-controls mt-6">
-                <button className="btn bg-red-600 btn-primary border-0 text-white">
+                <button className="btn bg-blue-600 btn-primary border-0 text-white">
                   Register
                 </button>
               </div>

@@ -2,10 +2,12 @@ import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../Shared/Header";
 import Swal from 'sweetalert2'
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const UpdateProductPage = () => {
   const [specificProduct, setSpecificProduct] = useState();
-
+  const errorToast = (loginError) =>
+  toast.error(loginError, { position: "bottom-center" });
   const { id } = useParams();
   console.log("id: ", id);
   useEffect(() => {
@@ -27,44 +29,55 @@ const UpdateProductPage = () => {
     const date = form.date.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const description = form.description.value;
-    const type = form.type.value;
-    const brand = form.brandName.value;
 
-    const updatedProduct = {
-      name,
-      brand,
-      date,
-      price,
-      rating,
-      description,
-      type,
-      photo,
-    };
 
-    console.log(" updated product is  ", updatedProduct);
-    fetch(
-        `https://brand-website-server.vercel.app/updateproduct/${id}`,
-        {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(updatedProduct),
-        }
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.modifiedCount > 0) {
-            Swal.fire({
-              title: "Success!",
-              text: "Product Updated Successfully",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
+    if(rating>5){
+      console.log("sd");
+      errorToast("Rating should be less than 5");
+      return;
+          }else{
+
+            const description = form.description.value;
+            const type = form.type.value;
+            const brand = form.brandName.value;
+        
+            const updatedProduct = {
+              name,
+              brand,
+              date,
+              price,
+              rating,
+              description,
+              type,
+              photo,
+            };
+        
+            console.log(" updated product is  ", updatedProduct);
+            fetch(
+                `https://brand-website-server.vercel.app/updateproduct/${id}`,
+                {
+                  method: "PUT",
+                  headers: {
+                    "content-type": "application/json",
+                  },
+                  body: JSON.stringify(updatedProduct),
+                }
+              )
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data);
+                  if (data.modifiedCount > 0) {
+                    Swal.fire({
+                      title: "Success!",
+                      text: "Product Updated Successfully",
+                      icon: "success",
+                      confirmButtonText: "Cool",
+                    });
+                  }
+                });
+
           }
-        });
+   
 
  }
  
@@ -76,7 +89,7 @@ const UpdateProductPage = () => {
   <div>
 
    <Header></Header>
-
+   <ToastContainer />
    <div className="lg:max-w-6xl mx-auto bg-slate-300 rounded-xl shadow-xl">
         <form onSubmit={handleUpdateProduct} className="card-body">
           <div className="flex lg:flex-row flex-col gap-5">

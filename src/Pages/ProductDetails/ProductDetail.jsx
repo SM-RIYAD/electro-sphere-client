@@ -1,13 +1,16 @@
-import React from "react";
+
 import Header from "../../Shared/Header";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 const ProductDetail = () => {
   const [specificProduct, setSpecificProduct] = useState({});
-
+  const { user, logOut, theme, setTheme } = useContext(AuthContext);
   const { id } = useParams();
-  console.log("id: ", id);
+  console.log("this is cart user ", user.email);
+
+  const email=user.email;
   useEffect(() => {
     fetch(`https://brand-website-server.vercel.app/specificProduct/${id}`)
       .then((result) => result.json())
@@ -22,12 +25,12 @@ const ProductDetail = () => {
     specificProduct;
 
   const handleAddToCart = () => {
-    fetch("http://localhost:5000/addtocart", {
+    fetch("https://brand-website-server.vercel.app/addtocart", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({ name, brand, date, price, rating, description, type, photo }),
+        body: JSON.stringify({ name,email, brand, date, price, rating, description, type, photo }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -65,13 +68,30 @@ const ProductDetail = () => {
          
           <p className=" font-bold py-2">{specificProduct.price} $</p>
           <p className="text-gray my-3 ">{specificProduct?.description}</p>
+          <p className="">
+            {" "}
+            <i>
+              {" "}
+              Rated <span className=" font-bold text-gray-600">
+                {rating}{" "}
+              </span>{" "}
+              out of 5{" "}
+            </i>{" "}
+          </p>
             <p className="font-bold my-3 "> MFG: < span className="font-bold text-red-600">{specificProduct.date}</span></p>
+          <div className="flex gap-2">
           <button
             onClick={handleAddToCart}
             className="btn btn-accent  text-white   "
           >
             Add to Cart
           </button>
+          <Link to={"/myCart"}>
+          <button className="btn btn-active btn-ghost">Cart</button>
+          </Link>
+       
+          </div>
+          
         </div>
       </div>
     </div>

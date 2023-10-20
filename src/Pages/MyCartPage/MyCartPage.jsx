@@ -1,33 +1,75 @@
-import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import Header from '../../Shared/Header';
-import CartProductCard from './CartProductCard';
+import React, { useContext, useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import Header from "../../Shared/Header";
+import CartProductCard from "./CartProductCard";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const MyCartPage = () => {
+  const [ploading, setploading] = useState(false);
+  const { user } = useContext(AuthContext);
+  // const cart= useLoaderData();
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    setploading(true);
+    fetch(`https://electro-sphere-server.vercel.app/cart/${user.email}`)
+      .then((result) => result.json())
+      .then((data) => {setProducts(data)
+        setploading(false);
+    });
+  }, []);
+  console.log("This is cart", products);
+  return (
+    <div>
+      <Header></Header>
+      <h1 className="text-center text-4xl py-10 font-bold">My Cart</h1>
+      <div className=" lg:max-w-6xl mx-auto ">
 
-    const cart= useLoaderData();
-    const[products,setProducts]=useState(cart);
+      {ploading ? (
+          <div>
+            <span className="loading loading-spinner loading-lg"></span>
+          </div>
+        ) : (
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
+            { products.length ? (
+            products.map((product, idx) => (
+                <CartProductCard
+                  cartproducts={products}
+                  setProducts={setProducts}
+                  key={idx}
+                  product={product}
+                />
+              ))
+            ) : (
+              <div className=" mt-20 col-span-2 row-span-4 flex justify-center w-full ">
+                {" "}
+                <p className="lg:text-6xl text-xl px-5 py-10  font-bold">
+                  You have not added anything to the cart yet!{" "}
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
 
-    console.log("This is cart",products );
-    return (
-        <div>
-            <Header></Header>
-            <h1 className='text-center text-4xl font-bold'>My Cart</h1>
+     
 
-            <div className='grid lg:grid-cols-2 grid-cols-1'>
-
-                {
-products.map((product,idx)=><CartProductCard cartproducts={products} setProducts={setProducts} key={idx} product={product}/>)
-
-
-
-                }
-
-
-
-            </div>
-        </div>
-    );
+      {/* {products.length === 0 && (
+        <p className="lg:text-4xl py-20 min-h-screen text-yellow-500 font-bold text-center">
+          You have not added any product to the cart yet!
+        </p>
+      )}
+      <div className="grid lg:grid-cols-2 grid-cols-1">
+        {products.map((product, idx) => (
+          <CartProductCard
+            cartproducts={products}
+            setProducts={setProducts}
+            key={idx}
+            product={product}
+          />
+        ))}
+      </div> */}
+    </div>
+  );
 };
 
 export default MyCartPage;

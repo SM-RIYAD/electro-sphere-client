@@ -103,7 +103,7 @@ else{
 </li>
 <li>
         {user && (
-          <div className=" xl:ms-10 lg:ms-0  flex items-center flex-col mt-6 gap-2  ">
+          <div className="  lg:ms-0  flex items-center flex-col mt-6 gap-2  ">
             <div className="rounded-full ">
               <div className="w-7  rounded-full ">
                 <img className="rounded-full" src={user?.photoURL} />
