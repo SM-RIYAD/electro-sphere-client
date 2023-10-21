@@ -22,8 +22,9 @@ const Home = () => {
       <Header></Header>
       <Banner />
       <h1 className="text-4xl mt-16 pb-5 font-bold text-center">BRANDS</h1>
-      <div className="grid lg:max-w-6xl mx-auto gap-3 mt-5 lg:grid-cols-3 md:grid-cols-1 md:px-48 lg:px-0 grid-cols-1 lg:ps-0 ps-12 ">
+      <div className="grid   lg:max-w-6xl mx-auto gap-3 mt-5 lg:grid-cols-3  md:grid-cols-1 md:px-48  lg:px-0 grid-cols-1 lg:ps-0  justify-items-center ">
         {brands.map((brand, idx) => (
+         
           <BrandCards brand={brand} key={idx} />
         ))}
       </div>

@@ -21,7 +21,7 @@ const MyCartPage = () => {
   return (
     <div>
       <Header></Header>
-      <h1 className="text-center text-4xl py-10 font-bold">My Cart</h1>
+      <h1 className="text-center text-4xl py-10 font-bold">MY CART</h1>
       <div className=" lg:max-w-6xl mx-auto ">
 
       {ploading ? (
@@ -29,7 +29,7 @@ const MyCartPage = () => {
             <span className="loading loading-spinner loading-lg"></span>
           </div>
         ) : (
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
+          <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5">
             { products.length ? (
             products.map((product, idx) => (
                 <CartProductCard
@@ -40,10 +40,11 @@ const MyCartPage = () => {
                 />
               ))
             ) : (
-              <div className=" mt-20 col-span-2 row-span-4 flex justify-center w-full ">
+              <div className=" mt-10 col-span-2 row-span-4  flex flex-col justify-center items-center w-full ">
                 {" "}
-                <p className="lg:text-6xl text-xl px-5 py-10  font-bold">
-                  You have not added anything to the cart yet!{" "}
+                <img className="w-1/3" src="https://i.ibb.co/Y8Jspkt/empty-cart.png" alt=""  />
+                <p className="lg:text-2xl font-bold text-gray-500  text-xl px-5 py-10  ">
+                  Cart is Empty!{" "}
                 </p>
               </div>
             )}

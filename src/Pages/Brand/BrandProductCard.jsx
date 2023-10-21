@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 const BrandProductCard = ({ product }) => {
   const { name, _id, brand, date, price, rating, description, type, photo } =
     product;
@@ -23,10 +24,10 @@ const BrandProductCard = ({ product }) => {
             </button>
           </div>
 
-          <p>{description}</p>
+          {/* <p>{description}</p> */}
           <p className="text-red-500 font-bold"> {price} $</p>
 
-          <p>
+          {/* <p>
             {" "}
             <i>
               {" "}
@@ -35,8 +36,13 @@ const BrandProductCard = ({ product }) => {
               </span>{" "}
               out of 5{" "}
             </i>{" "}
-          </p>
-          <div className="card-actions justify-center">
+          </p> */}
+          <div>
+            
+          </div>
+          <p className=""> {rating}<FontAwesomeIcon className="ps-1" icon={faStar} style={{ fontSize: '16px', color: 'orange' }} /> </p>
+          
+          <div className="card-actions justify-start">
             <Link to={`/productdetails/${_id}`}>
               <button className="btn btn-active btn-accent">Details</button>
             </Link>

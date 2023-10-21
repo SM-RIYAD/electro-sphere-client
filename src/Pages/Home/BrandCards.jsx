@@ -7,7 +7,7 @@ const BrandCards = ({ brand }) => {
     <Link to={`/brand/${name}`}>
       {" "}
       <div className="hover:scale-95   " >
-        <div className="card lg:w-96 md:w-auto w-56 bg-base-100 shadow-xl image-full border  border-stone-100">
+        <div className="card xl:w-96  lg:w-80 md:w-auto w-56 bg-base-100 shadow-xl image-full border  border-stone-100">
           <figure className="h-56">
             <img
               className=" w-full h-full object-cover"

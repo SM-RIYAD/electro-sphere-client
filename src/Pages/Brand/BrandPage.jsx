@@ -38,7 +38,7 @@ const BrandPage = () => {
       <Header></Header>
       <Brandslider pictures={brandpics[0]?.picUrls} />
 
-      <h1 className="text-4xl font-bold text-center py-10">BRAND PRODUCTS</h1>
+      <h1 className="text-4xl font-bold text-center py-10"> <span className="text-blue-600">{brandName.toUpperCase()}</span> PRODUCTS</h1>
       <div className=" lg:max-w-6xl mx-auto">
         {ploading ? (
           <div>
@@ -54,11 +54,10 @@ const BrandPage = () => {
                 ></BrandProductCard>
               ))
             ) : (
-              <div className=" mt-20 col-span-2 row-span-4 flex justify-center w-full ">
+              <div className=" mt-20 col-span-2 row-span-4 flex flex-col justify-center items-center w-full ">
+                <img className="w-1/3" src="https://i.ibb.co/3C4Tqdg/no-magento-product-found.jpg" alt="" srcset="" />
                 {" "}
-                <p className="text-6xl font-bold">
-                  Sorry! There are no available products for this brand.{" "}
-                </p>
+                
               </div>
             )}
           </div>

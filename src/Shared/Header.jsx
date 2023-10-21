@@ -30,41 +30,14 @@ else{
         <NavLink to="/">Home</NavLink>
       </li>
      
-      <li className={`${user ? "pt-10" : "pt-5"} `}>
-        <NavLink to="/addproduct">Add Product</NavLink>
+      <li  className={`${user ? "pt-10" : "pt-5"}  `}>
+        <NavLink  to="/addproduct">Add Product</NavLink>
       </li>
       <li className={`${user ? "pt-10" : "pt-5"} `}>
         <NavLink to="/mycart">My Cart</NavLink>
       </li>
 
-      {/* <li className={`${user ? "pt-10" : "pt-5"} `}>
-        {" "}
-        {theme === "light" && (
-          <p
-            onClick={() => {
-              setTheme("dark");
-              console.log("this is theme ", theme);
-            }}
-            className="    border-0 "
-          >
-            {" "}
-            Dark
-          </p>
-        )}
-        {theme === "dark" && (
-          <p
-            onClick={() => {
-              setTheme("light");
-
-              console.log("this is theme ", theme);
-            }}
-            className="  border-0 "
-          >
-            {" "}
-            Light
-          </p>
-        )}
-      </li> */}
+ 
    
       <li className={`${user ? "pt-10" : "pt-5"} `}>
         {user?.displayName ? (
@@ -138,7 +111,7 @@ else{
             </label>
             <ul
               tabIndex={0}
-              className="menu z-40 menu-sm dropdown-content mt-3  p-2 shadow bg-base-200 rounded-box w-52"
+              className="menu  z-40 menu-sm dropdown-content mt-3  p-2 shadow bg-base-200 rounded-box w-52"
             >
               {navLinks}
             </ul>

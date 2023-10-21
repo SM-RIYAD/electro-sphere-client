@@ -1,5 +1,7 @@
 import React from "react";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 const CartProductCard = ({setProducts, product,cartproducts }) => {
   const { name, _id, brand, date, price, rating, description, type, photo } =
     product;
@@ -42,8 +44,8 @@ const CartProductCard = ({setProducts, product,cartproducts }) => {
   return (
     <div>
       <div className="p-5 ">
-        <div className="card  flex lg:flex-row flex-col h-full border-stone-100 border-2 card-side bg-base-100 shadow-xl">
-          <figure className="lg:w-1/2">
+        <div className="card  lg:h-80  flex lg:flex-row flex-col  border-stone-100 border-2 card-side bg-base-100 shadow-xl">
+          <figure className="lg:w-1/2 lg:h-full h-40  ">
             <img className="object-fill h-full" src={photo} alt="Movie" />
           </figure>
           <div className="card-body lg:w-1/2">
@@ -60,7 +62,7 @@ const CartProductCard = ({setProducts, product,cartproducts }) => {
             </button>
           </div>
 
-            <p>{description}</p>
+           
             {/* <p>
               {" "}
               <i>{price} $</i>
@@ -70,17 +72,8 @@ const CartProductCard = ({setProducts, product,cartproducts }) => {
             
           <p className="text-red-500 font-bold"> {price} $</p>
 
-          <p>
-            {" "}
-            <i>
-              {" "}
-              Rated <span className=" font-bold text-gray-600">
-                {rating}{" "}
-              </span>{" "}
-              out of 5{" "}
-            </i>{" "}
-          </p>
-            <div className="card-actions justify-center">
+          <p className=""> {rating}<FontAwesomeIcon className="ps-1" icon={faStar} style={{ fontSize: '16px', color: 'orange' }} /> </p>
+            <div className="card-actions justify-start">
               <button onClick={()=>handleDelete(_id)} className="btn  btn-error">
                 Delete
               </button>

@@ -9,11 +9,11 @@ const Banner = () => {
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
       {/* <h1 className="mb-5 text-4xl font-bold">Discover ElectroSphere!</h1> */}
-      <div className='  h-32 w-full  '><img className="w-full  h-full" src="https://i.ibb.co/xYnRrrK/electro-for-dark2-removebg-preview.png"  /></div>
+      <div className='  h-32 w-full lg:scale-150 '><img className="w-full  h-full" src="https://i.ibb.co/xYnRrrK/electro-for-dark2-removebg-preview.png"  /></div>
       
-      <p className="mb-5">ElectroSphere invites you to explore a curated universe of cutting-edge electronics from leading brands like Apple, Samsung, and Sony. Find the latest smartphones, tablets, laptops, and accessories—all handpicked for quality and innovation. !</p>
+      <p className="mb-2 relative -top-7">ElectroSphere invites you to explore a curated universe of cutting-edge electronics from leading brands like Apple, Samsung, and Sony. Find the latest smartphones, tablets, laptops, and accessories—all handpicked for quality and innovation. !</p>
      <Link to= "/register">
-     <button className="btn btn-primary">Register</button>
+     <button className="btn btn-primary">SHOP NOW</button>
      </Link> 
     </div>
   </div>

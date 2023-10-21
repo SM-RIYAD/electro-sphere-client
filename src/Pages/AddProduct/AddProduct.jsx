@@ -67,7 +67,9 @@ return;
     <div className="min-h-screen px-5">
       <Header></Header>
       <ToastContainer />
-      <div className="lg:max-w-6xl   mx-auto bg-slate-300 rounded-xl shadow-xl">
+      <h1 className="text-4xl font-bold text-center py-5">ADD A PRODUCT</h1>
+      <div className="lg:max-w-6xl   mx-auto bg-blue-300 rounded-xl shadow-xl">
+       
         <form onSubmit={handleAddProduct} className="card-body ">
           <div className="flex lg:flex-row flex-col gap-5">
             <div className="w-full lg:w-1/2 ">
