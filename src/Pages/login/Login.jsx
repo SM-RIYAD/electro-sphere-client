@@ -67,7 +67,7 @@ const { signIn,googleSignIn,theme }=useContext(AuthContext);
   }
   return (
     <div data-theme={`${theme}`}  className="">
-     <Header></Header>
+   
       <ToastContainer />
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col lg:flex-row-reverse">

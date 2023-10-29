@@ -62,7 +62,7 @@ const  { createUser, updateUser,logOut } =useContext(AuthContext)
   };
   return (
     <div>
-      <Header></Header>
+
       <ToastContainer />
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col lg:flex-row-reverse">

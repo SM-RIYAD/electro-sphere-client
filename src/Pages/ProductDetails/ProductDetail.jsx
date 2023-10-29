@@ -48,7 +48,7 @@ const ProductDetail = () => {
   };
   return (
     <div>
-      <Header></Header>
+  
       <div className=" lg:max-w-6xl  pb-20 gap-10 mx-5 lg:mx-auto mt-10 lg:flex   ">
         <div className='lg:w-1/2 lg:p-5  '>
           <img

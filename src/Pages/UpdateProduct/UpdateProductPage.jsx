@@ -88,7 +88,6 @@ const UpdateProductPage = () => {
   
   <div>
 
-   <Header></Header>
    <ToastContainer />
    <h1 className="text-4xl font-bold py-5 text-center"> UPDATE A PRODUCT</h1>
    <div className="lg:max-w-6xl mx-auto bg-blue-300 rounded-xl shadow-xl">

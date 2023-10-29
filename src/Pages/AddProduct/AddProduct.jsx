@@ -65,7 +65,7 @@ return;
   };
   return (
     <div className="min-h-screen px-5">
-      <Header></Header>
+   
       <ToastContainer />
       <h1 className="text-4xl font-bold text-center py-5">ADD A PRODUCT</h1>
       <div className="lg:max-w-6xl   mx-auto bg-blue-300 rounded-xl shadow-xl">

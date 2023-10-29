@@ -20,7 +20,7 @@ const MyCartPage = () => {
   console.log("This is cart", products);
   return (
     <div>
-      <Header></Header>
+      
       <h1 className="text-center text-4xl py-10 font-bold">MY CART</h1>
       <div className=" lg:max-w-6xl mx-auto ">
 

@@ -35,7 +35,7 @@ const BrandPage = () => {
 
   return (
     <div className=" min-h-screen" data-theme={`${theme}`}>
-      <Header></Header>
+   
       <Brandslider pictures={brandpics[0]?.picUrls} />
 
       <h1 className="text-4xl font-bold text-center py-10"> <span className="text-blue-600">{brandName.toUpperCase()}</span> PRODUCTS</h1>

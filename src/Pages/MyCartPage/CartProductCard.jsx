@@ -45,8 +45,8 @@ const CartProductCard = ({setProducts, product,cartproducts }) => {
     <div>
       <div className="p-5 ">
         <div className="card  lg:h-80  flex lg:flex-row flex-col  border-stone-100 border-2 card-side bg-base-100 shadow-xl">
-          <figure className="lg:w-1/2 lg:h-full h-40  ">
-            <img className="object-fill h-full" src={photo} alt="Movie" />
+          <figure className="lg:w-1/2 lg:h-full h-40 lg:p-0 p-2  ">
+            <img className="object-fill rounded h-full" src={photo} alt="Movie" />
           </figure>
           <div className="card-body lg:w-1/2">
             <h2 className="card-title">{name}</h2>
