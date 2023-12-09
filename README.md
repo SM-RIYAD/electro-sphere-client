@@ -20,3 +20,7 @@ Here are some bullet points about this web site.
 
 7.The website is fully responsive.
 
+  <h3> Technologies Used </h3> 
+Reactjs,nodejs,express js,mongodb,
+Tailwind,daisiui,html,css
+
